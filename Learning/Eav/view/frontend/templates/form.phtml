@@ -1,0 +1,16 @@
+<form name="status" action="<?= $block->getUrl('eav/account_status/save'); ?>" method="POST">
+    <span><input name="status" type="text"></span>
+    <input type="submit" value="Save">
+</form>
+<script type="text/javascript">
+    require([
+        'Magento_Customer/js/customer-data',
+    ], function(customerData){
+        setTimeout(func, 5000);
+        function func() {
+            var sections = ['customer'];
+            customerData.invalidate(sections);
+            customerData.reload(sections, true);
+        }
+    });
+</script>
